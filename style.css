@@ -1,0 +1,386 @@
+*{
+    margin: 0;                        /* Remove default margin from all elements */
+    padding: 0;                       /* Remove default padding from all elements */
+    font-family: Arial, sans-serif;    /* Set default font for all elements */
+    box-sizing: border-box;            /* Include padding and border in element's total width and height */
+}
+
+/* Set base styles for the body */
+body{
+    background-color: black;           /* Set background color to black */
+    color: #fff;                       /* Set default text color to white */
+}
+
+/* Style the header section */
+#header{
+  width: 100%;                        /* Make header span full width */
+  height: 100vh;                      /* Make header take full viewport height */
+  background: url(images/background.png); /* Set background image */
+  background-size: cover;              /* Scale background image to cover entire header */
+  background-position: center;         /* Center the background image */
+}
+
+/* Container for logo and navigation */
+.container {
+  padding: 10px 10%;                  /* Add vertical and horizontal padding */
+     /* Space out logo and nav to edges */
+}
+
+/* Style the navigation bar */
+nav{
+  display: flex;                      /* Use flexbox for nav layout */
+  align-items: center;                /* Vertically center nav items */
+  justify-content: space-between;     /* Space out nav content */
+  flex-wrap: wrap;                    /* Allow nav items to wrap on small screens */
+}
+
+/* Style the logo image */
+.logo {
+  width: 140px;                       /* Set logo width */
+}
+
+/* Style each navigation list item */
+nav ul li{
+  display: inline-block;              /* Display nav items in a row */
+  list-style: none;                   /* Remove default list bullets */
+  margin: 10px 20px;                  /* Add spacing around nav items */
+}
+
+/* Style the navigation links */
+nav ul li a{
+  color: #fff;                        /* Set link color to white for visibility on dark background */
+  text-decoration: none;               /* Remove underline from links for a cleaner look */
+  font-size: 18px;                     /* Set font size for navigation links */
+  position: relative;                  /* Establish positioning context for the pseudo-element (::after) */
+}
+
+/* Add underline effect to navigation links on hover/focus */
+nav ul li a::after{
+  content:'';                         /* Create an empty pseudo-element for the underline effect */
+  width:0;                         /* Make the underline span the full width of the link */
+  height:3px;                         /* Set the thickness of the underline */
+  background: #ff004f;                /* Set the underline color to a highlight color */
+  position : absolute;                /* Position the underline absolutely within the link */
+  left : 0;                           /* Align the underline to the left edge of the link */
+  bottom: -6px;                       /* Position the underline slightly below the link text */
+  transition: width 0.5s;                   /* Animate the underline width smoothly */
+}
+
+/* Animate underline width on hover */
+nav ul li a:hover::after{
+  width:100%;                        /* Expand the underline to 100% on hover for a visual effect */
+}
+.header-text{
+   margin:100px 0 0 100px;
+  font-size: 30px;                  /* Set font size for header text */
+}
+.header-text h1 span{
+  color: #ff004f;
+}
+/* about */
+#about{
+  padding: 75px 0 80px;                  /* Add vertical and horizontal padding */
+  color:#ababab;
+
+}
+.sub-title{
+  font-size: 60px;
+  font-weight: 600;                  /* Make subtitle bold */
+  color: #fff;
+}
+.row{
+  display:flex;
+  justify-content: space-between; /* Space out items evenly */
+  flex-wrap: wrap;
+}
+
+.about-col-1{
+  flex-basis: 35%;
+}
+
+.about-col-1 img{
+  width: 100%;
+  border-radius: 15px;
+}
+
+.about-col-2{
+  flex-basis: 60%;
+}
+.tab-titles{
+  display:flex;
+  margin: 20px 0 40px;
+}
+
+.tab-links{
+
+  margin-right:50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor:pointer;
+  position: relative;
+}
+
+.tab-links::after{
+  content:'';
+  width: 0;
+  height: 3px;
+  background: #ff004f;                /* Set underline color */
+  position:absolute;                /* Position the underline absolutely */
+  left: 0;                           /* Align the underline to the left edge of the link */   
+  bottom: -6px;                       /* Position the underline slightly below the link text */
+  transition: width 0.5s;                   /* Animate the underline width smoothly */
+}
+
+.tab-links.active-link::after{
+  width:100%;                        /* Expand the underline to 100% on active link */
+}
+
+.tab-contents ul li{
+  list-style: none;
+  margin : 10px 0;
+
+}
+.tab-contents ul li span{
+  color: #e66114;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.tab-contents{
+  display:none;
+}
+.tab-contents.active-tab{
+  display: block;                    /* Show the active tab content */
+}
+
+/* services */
+#services{
+  padding: 10px 0 200px;                  /* Add vertical padding */
+
+}
+
+.services-list{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create a responsive grid layout */
+  gap: 40px;                        /* Add space between grid items */
+  margin-top: 50px;                 /* Add top margin to separate from previous content */
+}
+
+.services-list div{
+  background: #262626;          /* Set background color for service items */
+  padding:15px; /* Add padding inside service items */
+  font-size: 13px;
+  font-weight: 300;
+  border-radius: 5px;
+  transition:background-color 0.5s, transform 0.5s; /* Smooth transition for background color and transform */
+}
+
+.services-list div a{
+  color:#fff;
+  text-decoration: none;
+  font-size: 12px;
+  margin-top: 20px;
+  display: inline-block;
+}
+.services-list div h3{
+  font-size: 20px;                  /* Set font size for service titles */
+  margin-bottom: 10px;              /* Add space below the title */
+}
+.services-list div:hover{
+  background-color: #ff004f;  
+  transform:translateY(-10px);
+}
+
+/* portfolio */
+
+#portfolio{
+  padding:50px 0;
+}
+
+.work-list{
+  display: grid;                     /* Use grid layout for portfolio items */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 30px;                         /* Space between portfolio items */
+  margin-top:50px;
+}
+
+.work{
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;                 /* Hide overflow for rounded corners */
+}
+
+.work img{
+  width:100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s; /* Smooth transition for zoom effect */
+}
+
+.layer{
+  width: 100%;
+  height: 0;
+  background:linear-gradient(rgba(0, 0, 0, 0.5), #ff004f); /* Dark overlay */
+  border-radius: 10px;
+  position: absolute;               /* Position overlay absolutely */
+  left: 0;
+  bottom:0;
+  overflow: hidden;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding:0 40px;
+  text-align: center;
+  font-size: 20px;                  /* Set font size for overlay text */
+ transition: height 0.5s; /* Smooth transition for height */
+}
+
+.layer h3{
+  font-weight:500;
+  margin-bottom:20px;
+
+}
+
+.layer a{
+  margin-top:20px;
+  color: #ff004f;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 60px;
+  background:#fff;
+  width: 60px;
+  height:60px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.layer a img{
+  color:#ff004f;
+  width:50%;
+  height: 50%;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.work:hover img{
+  transform: scale(1.1); /* Scale image on hover for zoom effect */
+}
+
+.work:hover .layer{
+  height:100%;
+}
+
+.btn{
+  display:block;
+  margin:50px auto;
+  width: fit-content;
+  border: 1px solid #ff004f;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+
+
+
+}
+
+.btn:hover{
+  background-color: #ff004f;
+}
+
+/* contact */
+
+
+.contact-left{
+  flex-basis:35%;
+}
+
+.contact-right{
+  flex-basis:60%;
+}
+
+.contact-left p{
+  margin-top: 30px;
+}
+
+.contact-left p i{
+  color: #ff004f;
+  margin-right: 15px;
+  font-size: 25px;
+}
+.social-icon{
+  margin-top:30px;
+
+}
+
+.social-icon a{
+  display:inline-block;
+  margin-right:15px;
+  color:#ababab;
+  font-size: 30px;
+  transition: transform 0.5s;
+  text-decoration: none; /* Smooth transition for icon color */
+}
+
+.social-icon a:hover{
+  color:#ff004f; /* Change icon color on hover */
+  transform: translateY(-5px); /* Slightly lift the icon on hover */
+}
+
+.btn.btn2{
+  display: inline-block;
+  background: #ff004f;
+
+}
+
+.contact-right form{
+   width: 100%;
+}
+
+form input, form textarea{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #262626; /* Dark background for input fields */
+  padding :15px
+  font-size:18px;
+  color: #fff;
+
+}
+
+form .btn.btn2{
+  cursor: pointer;
+  margin-top: -10px;
+  font-size: 18px;
+}
+
+
+.copyright{
+   width: 100%;
+   text-align: center;
+   padding: 25px 0  ;
+   background: #262626;
+   font-weight: 300;
+   margin-top:20px;
+}
+.copyright i{
+  color: #ff004f;
+}
+
+/* css for small screen */
+
+@media only screen and (max-width: 600px){
+  #header{
+    background-image: url(images/phone-background.png);
+  }
+
+  .header-text{
+    margin-top: 100%;
+     font-size: 16px;
+  }
+  
+
+}

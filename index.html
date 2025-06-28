@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
+
+</head>
+<body>
+    <div id="header">
+    <div class="container">
+        
+        <nav>
+            <img src="images/logo.png" class="logo" alt="Logo">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+       
+    </div>
+     <div class="header-text">
+            <p>UI/UX Designer</p>
+            <h1>Hi, I'm <span>Kevin</span> <br>Jen form Asutralia</h1>
+        </div>
+    </div>
+   <!-- about  -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills',event)">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience',event)">Experience</p>
+                        <p class="tab-links" onclick="opentab('education',event)">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX 1</span><BR>Designing web/app interfaces</li>
+                            <li><span>Web Development</span><BR>ML</li>
+                            <li><span>UI/UX</span><BR>Designing web/app interfaces</li>
+                    
+                        </ul>
+                    </div>
+                    <div class="tab-contents " id="experience">
+                        <ul>
+                            <li><span>UI/UX 2</span><BR>Designing web/app interfaces</li>
+                            <li><span>Web Development</span><BR>ML</li>
+                            <li><span>UI/UX</span><BR>Designing web/app interfaces</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>UI/UX 3</span><BR>Designing web/app interfaces</li>
+                            <li><span>Web Development</span><BR>ML</li>
+                            <li><span>UI/UX</span><BR>Designing web/app interfaces</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- serviecs -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div  >
+                <img src="https://cdn-icons-png.flaticon.com/128/17379/17379046.png" loading="lazy" alt="Code " title="Code " width="64" height="64">                
+                <h3>Web Development</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <a href="#">learn more</a>
+            </div>
+            <div  >
+                <img src="https://cdn-icons-png.flaticon.com/128/5611/5611037.png" loading="lazy" alt="Illustrator " title="Illustrator " width="64" height="64">
+                <h3>UI/UX Design</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <a href="#">learn more</a>
+            </div>
+            <div  >
+                <img src="https://cdn-icons-png.flaticon.com/128/10042/10042070.png" loading="lazy" alt="Git " title="Git " width="64" height="64">
+                <h3>Digital Marketing</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <a href="#">learn more</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Portfolio -->
+ <div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+            <img src="images/work-1.png">
+            <div class="layer">
+                <h3>Social Media App</h3>
+                <p>this app is a platform for social interaction.</p>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/11693/11693704.png" loading="lazy" alt="External link " title="External link " >
+                </a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="images/work-2.png">
+                        <div class="layer">
+                <h3>Social Media App</h3>
+                <p>this app is a platform for social interaction.</p>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/11693/11693704.png" loading="lazy" alt="External link " title="External link " >
+                </a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="images/work-3.png">
+                <div class="layer">
+                <h3>Social Media App</h3>
+                <p>this app is a platform for social interaction.</p>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/11693/11693704.png" loading="lazy" alt="External link " title="External link ">
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <a href="#" class="btn">see more</a>
+ </div>
+<!-- conntact -->
+<div id="contact"> 
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact me</h1>
+                <p><i class="fi fi-ss-paper-plane"></i>yuvaraj@gmail.com</p>
+                <p><i class="fi fi-ss-bubble-discussion"></i>37222873327</p>
+                <div class="social-icon">
+                    <a href="#"><i class="fi fi-brands-linkedin"></i></a>
+                    <a href="#"><i class="fi fi-ss-envelope"></i></a>
+                </div>
+                <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea rows="10" placeholder="Message"></textarea>
+                    <button type="submit" class="btn btn2">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright 2025 @ yuvaraj. Made with <i class="fi fi-ss-heart"></i> with hardcore basic web technologies. </p>
+    </div>
+</div>
+
+<script>
+    var tablinks =document.getElementsByClassName("tab-links");
+    var tabcontents =document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname,event){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+</body>
+</html>
