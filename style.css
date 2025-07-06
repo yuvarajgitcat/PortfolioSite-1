@@ -5,6 +5,10 @@
     box-sizing: border-box;            /* Include padding and border in element's total width and height */
 }
 
+html{
+    scroll-behavior: smooth;           /* Enable smooth scrolling for anchor links */
+}
+
 /* Set base styles for the body */
 body{
     background-color: black;           /* Set background color to black */
@@ -18,6 +22,7 @@ body{
   background: url(images/background.png); /* Set background image */
   background-size: cover;              /* Scale background image to cover entire header */
   background-position: center;         /* Center the background image */
+  background-attachment: fixed;        /* Make background image fixed during scroll */
 }
 
 /* Container for logo and navigation */
@@ -77,6 +82,8 @@ nav ul li a:hover::after{
 .header-text h1 span{
   color: #ff004f;
 }
+
+
 /* about */
 #about{
   padding: 75px 0 80px;                  /* Add vertical and horizontal padding */
@@ -141,7 +148,7 @@ nav ul li a:hover::after{
 
 }
 .tab-contents ul li span{
-  color: #e66114;
+  color: #ff004f;
   text-decoration: none;
   font-size: 18px;
 }
@@ -155,7 +162,7 @@ nav ul li a:hover::after{
 
 /* services */
 #services{
-  padding: 10px 0 200px;                  /* Add vertical padding */
+  padding: 10px 0 80px;                  /* Add vertical padding */
 
 }
 
@@ -340,14 +347,13 @@ nav ul li a:hover::after{
 
 form input, form textarea{
   width: 100%;
-  padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
   border: none;
   background-color: #262626; /* Dark background for input fields */
-  padding :15px
-  font-size:18px;
-  color: #fff;
+  padding : 15px;
+  font-size: 18px;
+  color : #fff;
 
 }
 
@@ -372,15 +378,84 @@ form .btn.btn2{
 
 /* css for small screen */
 
+nav .fi{
+  display: none;
+
+}
+
 @media only screen and (max-width: 600px){
   #header{
     background-image: url(images/phone-background.png);
   }
 
   .header-text{
-    margin-top: 100%;
+    margin: 50px 0 0 50px;
      font-size: 16px;
   }
   
+  .header-text h1{
+    font-size: 50px; 
+  }
+
+  nav .fi{
+    display: block;
+
+  }
+
+  nav ul{
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right:-200px; /* Hide off-screen initially */
+    width: 200px;
+    height: 100vh;                  /* Full viewport height */
+    padding-top: 50px;
+    z-index: 2;                  /* Ensure nav is above other content */
+  transition: right 0.5s; /* Smooth transition for sliding in */ 
+  }
+
+  nav ul li{
+    display: block;
+    margin :25px;
+  }
+
+  nav ul .fi{
+    position: absolute;
+    top: 25px;
+    left:25px;
+    cursor : pointer;
+  }
+
+  .sub-title
+{
+  font-size: 40px;;
+}
+  .about-col-1, .about-col-2{
+    flex-basis: 100%;                /* Stack columns on small screens */
+  }
+  .about-col-1{
+    margin-bottom: 30px;
+  }
+
+  .about-col-2{
+    font-size: 14px;
+  }
+
+  .tab-links{
+    font-size: 16px;
+  }
+  .contact-left, .contact-right{
+    flex-basis: 100%;
+  }
+  .copyright{
+    font-size: 13px;
+  }
+
+}
+
+#form-response{
+  color:#61b752;
+  margin-top: -40px;
+  display: block;
 
 }

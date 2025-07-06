@@ -15,13 +15,15 @@
         
         <nav>
             <img src="images/logo.png" class="logo" alt="Logo">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#resume">Resume</a></li>
+            <ul id="sidemenu">
+                <li><a href="#header">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="#contact">contact</a></li>
+                <i class="fi fi-ss-cross" onclick="closeMenu()"></i>
             </ul>
+            <i class="fi fi-ss-menu-burger" onclick="openMenu()"></i>
         </nav>
        
     </div>
@@ -151,13 +153,14 @@
                 <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contact-right">
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Subject" required>
-                    <textarea rows="10" placeholder="Message"></textarea>
+                <form name="submit-to-google-sheet" >
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <input type="text" name="Subject" placeholder="Subject" required>
+                    <textarea name="Message"  rows="10" placeholder="Message"></textarea>
                     <button type="submit" class="btn btn2">Send Message</button>
                 </form>
+                <span id="form-response"></span>
             </div>
         </div>
     </div>
@@ -181,7 +184,36 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
+
+    var sidemenu = document.getElementById("sidemenu");
+    function openMenu(){
+        sidemenu.style.right = "0";
+    }
+    function closeMenu(){
+        sidemenu.style.right = "-200px";
+    }  
+    
+    
 </script>
 
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbz0XULCLZlxoruwP44hmp4N0_2W-ExLfYFwOkRoBgL-t1GpGWf3MCmkNGNIWO2M-jOi/exec'
+  const form = document.forms['submit-to-google-sheet']
+    const formResponse = document.getElementById('form-response')
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        formResponse.innerHTML = "Message sent successfully"
+        setTimeout(() => {
+          formResponse.innerHTML = "";
+        }, 3000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>
